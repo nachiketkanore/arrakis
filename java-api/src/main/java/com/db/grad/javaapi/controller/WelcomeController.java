@@ -11,4 +11,8 @@ public class WelcomeController {
     return "Dogs API is up and running!";
   }
 
+  @GetMapping("/hello")
+  public String helloWorld() {
+    return "Hello, user. You have added this endpoint successfully";
+  }
 }
