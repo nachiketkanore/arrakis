@@ -27,7 +27,7 @@ steps:
     dir: 'java-api'
     args: ['app', 'deploy']
 
-  - name: start app
+  - name: start-app
     dir: 'java-api'
     args: ["mvn", "clean", "spring-boot:run"]
 
