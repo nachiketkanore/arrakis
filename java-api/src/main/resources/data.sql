@@ -17,3 +17,24 @@ INSERT INTO SECURITY (id, isin, cusip, issuer, maturity_date, coupon, type, face
                      (4, 'ASD', 'ABC', 'DB', '2022-01-01', 'DB100', 'PRIVATE', 1000.20, 'ACTIVE');
 INSERT INTO SECURITY (id, isin, cusip, issuer, maturity_date, coupon, type, face_value, status) VALUES
                      (5, 'TYU', 'ABC', 'EY', '2022-01-01', 'DB100', 'PRIVATE', 2000.20, 'ACTIVE');
+
+-- Sample data for trade table
+INSERT INTO TRADE (id, quantity, status, price, buysell, tradedate, settlementdate, bookid, counterpartyid, securityid) VALUES
+                    (1, 100, 'OK', 1000, 'YES', '2022-09-09', '2022-09-10', 22, 12, 5);
+INSERT INTO TRADE (id, quantity, status, price, buysell, tradedate, settlementdate, bookid, counterpartyid, securityid) VALUES
+                    (2, 200, 'OK', 234, 'NO', '2022-09-09', '2029-09-10', 22, 21, 2);
+INSERT INTO TRADE (id, quantity, status, price, buysell, tradedate, settlementdate, bookid, counterpartyid, securityid) VALUES
+                    (3, 333, 'BAD', 235, 'NO', '2022-09-09', '2023-02-10', 22, 12, 3);
+INSERT INTO TRADE (id, quantity, status, price, buysell, tradedate, settlementdate, bookid, counterpartyid, securityid) VALUES
+                    (4, 500, 'BAD', 3459, 'YES', '2022-09-09', '2022-09-10', 22, 12, 1);
+INSERT INTO TRADE (id, quantity, status, price, buysell, tradedate, settlementdate, bookid, counterpartyid, securityid) VALUES
+                    (5, 100, 'OK', 3452, 'NO', '2023-09-09', '2025-05-10', 22, 12, 1);
+INSERT INTO TRADE (id, quantity, status, price, buysell, tradedate, settlementdate, bookid, counterpartyid, securityid) VALUES
+                    (6, 10, 'OK', 10000, 'YES', '2022-09-09', '2022-09-10', 22, 12, 2);
+
+-- Sample data for counterparty table
+INSERT INTO COUNTERPARTY (id, name) VALUES (12, 'Ayush');
+INSERT INTO COUNTERPARTY (id, name) VALUES (13, 'Kunal');
+INSERT INTO COUNTERPARTY (id, name) VALUES (14, 'Nachiket');
+INSERT INTO COUNTERPARTY (id, name) VALUES (15, 'Mihir');
+INSERT INTO COUNTERPARTY (id, name) VALUES (16, 'Onkar');
