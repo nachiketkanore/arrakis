@@ -17,15 +17,19 @@ steps:
     entrypoint: mvn
     dir: 'java-api'
     args: ["test"]
-    
+
   - name: maven:3-jdk-8
     entrypoint: mvn
     dir: 'java-api'
     args: ["package", "-Dmaven.test.skip=true"]
-    
+
   - name: gcr.io/cloud-builders/gcloud
     dir: 'java-api'
     args: ['app', 'deploy']
-    
+
+  - name: start app
+    dir: 'java-api'
+    args: ["mvn", "clean", "spring-boot:run"]
+
 timeout: "1600s"
 # [END cloudbuild_maven]
