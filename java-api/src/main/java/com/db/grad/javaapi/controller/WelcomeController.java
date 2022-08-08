@@ -15,4 +15,9 @@ public class WelcomeController {
   public String helloWorld() {
     return "Hello, user. You have added this endpoint successfully";
   }
+
+  @GetMapping("/test")
+  public String testAPI() {
+    return "API test: Working";
+  }
 }
