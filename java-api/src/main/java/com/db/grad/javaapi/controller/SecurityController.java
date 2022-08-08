@@ -8,9 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @RestController
 public class SecurityController {
@@ -30,6 +29,22 @@ public class SecurityController {
                 .orElseThrow(() -> new ResourceNotFoundException(
                         String.format("Security for id %s not found", id)));
         return ResponseEntity.ok().body(result);
+    }
+
+    @GetMapping("/security/{start_date}/{end_date}")
+    public List<Security> getSecurityByDateRange(@PathVariable String start_date, @PathVariable String end_date) throws Exception{
+        List<Security> inRangeSecurities = new ArrayList<>();
+        Date start = new SimpleDateFormat("dd-MM-yyyy").parse(start_date);
+        Date end = new SimpleDateFormat("dd-MM-yyyy").parse(end_date);
+        //System.out.println(start);
+        //System.out.println(end);
+        for(Security s: securityRepository.findAll()){
+
+            if(s.getMaturityDate().compareTo(start) >=0 && s.getMaturityDate().compareTo(end)<=0){
+                inRangeSecurities.add(s);
+            }
+        }
+        return inRangeSecurities;
     }
 
     @PostMapping("/security/add")
