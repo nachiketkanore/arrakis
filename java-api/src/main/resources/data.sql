@@ -38,3 +38,24 @@ INSERT INTO COUNTERPARTY (id, name) VALUES (13, 'Kunal');
 INSERT INTO COUNTERPARTY (id, name) VALUES (14, 'Nachiket');
 INSERT INTO COUNTERPARTY (id, name) VALUES (15, 'Mihir');
 INSERT INTO COUNTERPARTY (id, name) VALUES (16, 'Onkar');
+
+-- Sample data for book
+INSERT INTO BOOK (id, bookname) VALUES (1, 'Ritchy Rich');
+INSERT INTO BOOK (id, bookname) VALUES (2, 'ABC');
+INSERT INTO BOOK (id, bookname) VALUES (3, 'Golden Era');
+INSERT INTO BOOK (id, bookname) VALUES (4, 'Trader');
+INSERT INTO BOOK (id, bookname) VALUES (5, 'Banker Book');
+
+-- Sample data for user
+INSERT INTO USER (id, name, email, role) VALUES (1, 'name-1', 'name-1@abc.com', 'watcher');
+INSERT INTO USER (id, name, email, role) VALUES (2, 'name-2', 'name-2@abc.com', 'editor');
+INSERT INTO USER (id, name, email, role) VALUES (3, 'name-3', 'name-3@abc.com', 'updater');
+INSERT INTO USER (id, name, email, role) VALUES (4, 'name-4', 'name-4@abc.com', 'performer');
+INSERT INTO USER (id, name, email, role) VALUES (5, 'name-5', 'name-5@abc.com', 'temp-role');
+
+-- Sample data for bookuser
+INSERT INTO BOOKUSER (bookid, userid) VALUES (1, 3);
+INSERT INTO BOOKUSER (bookid, userid) VALUES (1, 5);
+INSERT INTO BOOKUSER (bookid, userid) VALUES (1, 2);
+INSERT INTO BOOKUSER (bookid, userid) VALUES (2, 1);
+INSERT INTO BOOKUSER (bookid, userid) VALUES (2, 2);
