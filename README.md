@@ -1,8 +1,8 @@
 # Bonds Application
 
 ## Instructions
-- Run java-api project and access http://localhost:8090/swagger-ui/index.html for all API endpoints available
-- Base URL is http://localhost:8090/ (port is 8090 not 8080)
+- Run java-api project and access http://localhost:8080/swagger-ui/index.html for all API endpoints available
+- Base URL is http://localhost:8080/
 
 ## Steps
 
