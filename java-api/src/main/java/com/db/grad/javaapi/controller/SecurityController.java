@@ -2,7 +2,9 @@ package com.db.grad.javaapi.controller;
 
 import com.db.grad.javaapi.exception.ResourceNotFoundException;
 import com.db.grad.javaapi.model.Security;
+import com.db.grad.javaapi.model.Trade;
 import com.db.grad.javaapi.repository.SecurityRepository;
+import com.db.grad.javaapi.repository.TradeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,6 +33,7 @@ public class SecurityController {
         return ResponseEntity.ok().body(result);
     }
 
+    //get all securtities in the date range
     @GetMapping("/security/{start_date}/{end_date}")
     public List<Security> getSecurityByDateRange(@PathVariable String start_date, @PathVariable String end_date) throws Exception{
         List<Security> inRangeSecurities = new ArrayList<>();
@@ -46,6 +49,8 @@ public class SecurityController {
         }
         return inRangeSecurities;
     }
+
+
 
     @PostMapping("/security/add")
     public Security addSecurity(@RequestBody Security security){

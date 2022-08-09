@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -46,6 +47,19 @@ public class TradeController {
         Security security = securityRepository.findById(trade.getSecurityid())
                 .orElseThrow(() -> new ResourceNotFoundException("Security not found for this trade id :: " + trade_id));
         return ResponseEntity.ok().body(security);
+    }
+
+    // get all trades associated with a security
+    @GetMapping("/getTradesFromSecurity/{sec_id}")
+    public List<Trade> getTradeBySecurityId(@PathVariable String sec_id){
+        long security_id=Long.parseLong(sec_id);
+        List<Trade> trades = new ArrayList<>();
+        for(Trade t: tradeRepository.findAll()){
+            if(t.getSecurityid() == security_id){
+                trades.add(t);
+            }
+        }
+        return trades;
     }
 
     // Create a trade
