@@ -3,6 +3,7 @@
 ## Instructions
 - Run java-api project and access http://localhost:8080/swagger-ui/index.html for all API endpoints available
 - Base URL is http://localhost:8080/
+- Deployed API: https://db-grads-39ch-group-21.nw.r.appspot.com/swagger-ui/index.html
 
 ## Steps
 
