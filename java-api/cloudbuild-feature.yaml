@@ -17,10 +17,6 @@ steps:
     entrypoint: mvn
     dir: 'java-api'
     args: ["test"]
-  - name: maven:3-jdk-8
-    entrypoint: mvn
-    dir: 'java-api'
-    args: ["clean", "spring-boot:run"]
     
 timeout: "1600s"
 # [END cloudbuild_maven]
